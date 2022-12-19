@@ -2,7 +2,8 @@
 #cp /etc/softhsm2.conf $HOME/.config/softhsm2/softhsm2.conf
 #sed -i s+var/lib+/home/ubuntu/start/hsm/shared+g $HOME/.config/softhsm2/softhsm2.conf
 
-HSM_SHARED=~/start/hsm/shared
+
+HSM_SHARED=$PWD/start/hsm/shared
 rm -fr $HSM_SHARED
 mkdir -p $HSM_SHARED/softhsm/tokens
 chmod 777  $HSM_SHARED

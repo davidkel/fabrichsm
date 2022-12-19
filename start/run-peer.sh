@@ -1,6 +1,6 @@
 docker run -it --rm
-        -v ~/start/peer:a/etc/hyperledger/fabric \
-	-v ~/start/hsm/shared:/shared \
+    -v $PWD/start/peer:/etc/hyperledger/fabric \
+	-v $PWD/start/hsm/shared:/shared \
 	-v /var/run/docker.sock:/host/var/run/docker.sock \
 	-e "CORE_PEER_ID=peer.example.com" \
         -e "CORE_PEER_ADDRESS=peer.example.com:7051" \
@@ -13,4 +13,4 @@ docker run -it --rm
 	-e "CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=bridge" \
 	-e "CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock" \
 	-p 7051:7051 \
-	peer:2.2.3 /bin/sh
+	peerhsm:2.2.3 /bin/sh
